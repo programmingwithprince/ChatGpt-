@@ -1,3 +1,4 @@
+from flask import Flask
 import telebot
 import requests
 
@@ -14,9 +15,21 @@ def send_welcome(message):
 def echo_all(message):
 	try:
 	    bot.reply_to(message,'Preparing your answer. please wait!')
+	    print(message.text)
 	    req = requests.post('https://langchain-app--codewithharry.repl.co/generate', json= {"prompt":message.text})
 	    bot.reply_to(message, req.text)           
 	except Exception as e:
 	    print(e)
 	    bot.reply_to(message,'Unable to process your request currently!')
 bot.infinity_polling()        
+
+
+
+
+app = Flask(__name__)
+ @app.route('/')
+def hello_world():
+    return 'Hello World'
+ 
+
+app.run()
