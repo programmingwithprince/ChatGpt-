@@ -1,7 +1,7 @@
 import telebot
 import requests
 
-TOKEN = '6399514429:AAGYGeqGVqXnoqXP0C-7m8s_tQNRbq_kdb8'
+TOKEN ='BOT TOKEN HERE'
 
 bot = telebot.TeleBot(TOKEN, parse_mode=None) # You can set parse_mode by default. HTML or MARKDOWN
 
