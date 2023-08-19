@@ -1,5 +1,3 @@
-from flask import Flask
-
 import telebot
 import requests
 
@@ -22,10 +20,3 @@ def echo_all(message):
 	    print(e)
 	    bot.reply_to(message,'Unable to process your request currently!')
 bot.infinity_polling()        
-app = Flask(__name__)
- 
-@app.route('/')
-def hello_world():
-    return 'Hello World'
- 
-app.run()
